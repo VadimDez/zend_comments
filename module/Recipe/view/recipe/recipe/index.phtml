@@ -1,0 +1,68 @@
+<a href="<?php print $this->basePath(); ?>/recipe/adduser">Add a user</a>
+<a href="<?php print $this->basePath(); ?>/recipe/addrecipe">Add a recipe</a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($users as $user)
+    {
+        ?>
+        <tr>
+            <td><?php print $user->getName(); ?></td>
+        </tr>
+    <?php
+    }
+
+    ?>
+    </tbody>
+</table>
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Recipe</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($recipes as $recipe)
+    {
+        ?>
+        <tr>
+            <td><?php print $recipe->getName(); ?></td>
+        </tr>
+    <?php
+    }
+
+    ?>
+    </tbody>
+</table>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Recipe</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($assocs as $assoc)
+    {
+        ?>
+        <tr>
+            <td><?php print $assoc->getUser()->getName(); ?></td>
+            <td><?php print $assoc->getRecipe()->getName(); ?></td>
+        </tr>
+    <?php
+    }
+
+    ?>
+    </tbody>
+</table>

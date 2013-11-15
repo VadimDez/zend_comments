@@ -1,0 +1,46 @@
+<a href="<?php print $this->basePath();?>/products/createcategory">Add a category</a>
+<a href="<?php print $this->basePath();?>/products/createproduct">Add a product</a>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Categories</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($categories as $category)
+    {
+        ?>
+        <tr>
+            <td><?php print $category->getName(); ?></td>
+        </tr>
+    <?php
+    }
+
+    ?>
+    </tbody>
+</table>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($products as $product)
+    {
+        ?>
+        <tr>
+            <td><?php print $product->getName(); ?></td>
+            <td><?php print $product->getCategory()->getName(); ?></td>
+        </tr>
+    <?php
+    }
+
+    ?>
+    </tbody>
+</table>
+

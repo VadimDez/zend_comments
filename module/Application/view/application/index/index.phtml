@@ -1,0 +1,51 @@
+<div class="row">
+    <div>
+        <a href="application/createproduct">Add new product</a>
+    </div>
+    <div>
+        <a href="application/createcategory">Add new category</a>
+    </div>
+    <div>
+        <a href="application/add">Add new user</a>
+    </div>
+
+    <?php
+    $addComment->setAttribute('action', $this->url('application', array('action' => 'add')));
+    $addComment->prepare();
+
+    echo $this->form()->openTag($addComment);
+    echo $this->formHidden($addComment->get('id')) . '</br>';
+    echo $this->formRow($addComment->get('senderName')) . '</br>';
+    echo $this->formRow($addComment->get('text')) . '</br>';
+    echo $this->formSubmit($addComment->get('submit')) . '</br>';
+    echo $this->form()->closeTag();
+    ?>
+
+        <?php
+
+        //foreach($comments as $comment)
+       // {
+        ?>
+            <?php //$comment->getId(); ?>
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" data-src="holder.js/64x64">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"></h4>
+                        <p></p>
+
+                        <!-- Nested media object -->
+                        <div class="media">
+                            ...
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        <?php
+        //}
+        ?>
+
+
+</div>

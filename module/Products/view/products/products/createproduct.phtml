@@ -1,0 +1,23 @@
+<?php
+// module/Application/view/application/index/createproduct.phtml:
+
+$title = 'Add new product';
+$this->headTitle($title);
+?>
+
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+//$form->setAttribute('action', $this->url(
+//    'application',
+//    array(
+//        'action' => 'createproduct'
+//    )
+//));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id')) . '</br>';
+echo $this->formRow($form->get('productName')) . '</br>';
+echo $this->formRow($form->get('idCategory')) . '</br>';
+echo $this->formSubmit($form->get('submit')) . '</br>';
+echo $this->form()->closeTag();

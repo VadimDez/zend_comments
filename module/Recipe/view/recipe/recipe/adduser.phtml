@@ -1,0 +1,22 @@
+<?php
+// module/Recipe/view/recipe/recipe/adduser.phtml:
+
+$title = 'Add new user';
+$this->headTitle($title);
+?>
+
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+//$form->setAttribute('action', $this->url(
+//    'application',
+//    array(
+//        'action' => 'createcategory'
+//    )
+//));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id')) . '</br>';
+echo $this->formRow($form->get('userName')) . '</br>';
+echo $this->formSubmit($form->get('submit')) . '</br>';
+echo $this->form()->closeTag();

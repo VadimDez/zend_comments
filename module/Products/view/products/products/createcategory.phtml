@@ -1,0 +1,22 @@
+<?php
+// module/Products/view/products/products/createcategory.phtml:
+
+$title = 'Add new category';
+$this->headTitle($title);
+?>
+
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+//$form->setAttribute('action', $this->url(
+//    'application',
+//    array(
+//        'action' => 'createcategory'
+//    )
+//));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id')) . '</br>';
+echo $this->formRow($form->get('categoryName')) . '</br>';
+echo $this->formSubmit($form->get('submit')) . '</br>';
+echo $this->form()->closeTag();
